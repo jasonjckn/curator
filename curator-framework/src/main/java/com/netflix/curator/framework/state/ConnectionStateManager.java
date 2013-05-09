@@ -70,7 +70,7 @@ public class ConnectionStateManager implements Closeable
     public ConnectionStateManager(CuratorFramework client)
     {
         this.client = client;
-        service = Executors.newSingleThreadExecutor(new ThreadFactoryBuilder().setNameFormat("ConnectionStateManager-%d").build());
+        service = Executors.newSingleThreadExecutor(new ThreadFactoryBuilder().setNameFormat("ConnectionStateManager-%d").setPriority(Thread.MAX_PRIORITY).build());
     }
 
     /**

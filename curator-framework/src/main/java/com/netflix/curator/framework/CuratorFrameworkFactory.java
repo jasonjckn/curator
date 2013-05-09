@@ -80,7 +80,7 @@ public class CuratorFrameworkFactory
 
     public static class Builder
     {
-        private static final ThreadFactory      defaultThreadFactory = new ThreadFactoryBuilder().setNameFormat("CuratorFramework-%d").build();
+        private static final ThreadFactory      defaultThreadFactory = new ThreadFactoryBuilder().setNameFormat("CuratorFramework-%d").setPriority(Thread.MAX_PRIORITY).build();
 
         private String          connectString;
         private int             sessionTimeoutMs = DEFAULT_SESSION_TIMEOUT_MS;
